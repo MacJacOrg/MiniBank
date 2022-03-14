@@ -41,4 +41,11 @@ public class Account {
     public void showAccount(){
         System.out.println("Numer klienta: " + accountNumber + " Imię: " + accountName + " Nazwisko: " + accountSurname + " Podaj stan konta: " + balance);
     }
+
+    public boolean search(int accountNumber){
+        if (this.accountNumber == accountNumber){
+            return true;
+        }
+        return false;
+    }
 }
