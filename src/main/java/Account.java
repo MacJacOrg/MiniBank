@@ -1,29 +1,44 @@
-public class Account {
+import java.util.Scanner;
 
-    private int accountNo;
+public class Account {
+    private int accountNumber;
     private String accountName;
     private String accountSurname;
     private long balance;
 
-    public Account(int accountNo, String accountName, String accountSurname, long balance){
-      this.accountNo = accountNo;
-      this.accountName = accountName;
-      this.accountSurname = accountSurname;
-      this.balance = balance;
-    }
+    Scanner scanner= new Scanner(System.in);
 
-    public Account(){
+
+
+    public Account (int accountNumber, String accountName, String accountSurname, long balance){
+        this.accountNumber= accountNumber;
+        this.accountName= accountName;
+        this.accountSurname=accountSurname;
+        this.balance=balance;
+    }
+    public Account (){
 
     };
 
+    public int getAccountNumber(){
+        return accountNumber;
 
-    public int getAccountNo(){
-        return accountNo;
     }
+    public void setAccountNumber(int accountNumber){
+        this.accountNumber = accountNumber;
 
-
-    public void setAccountNo(int accountNo){
-        this.accountNo = accountNo;
     }
-
+    public void openAccount(){
+        System.out.println("podaj numer ID");
+        accountNumber= scanner.nextInt();
+        System.out.println(" podaj imie");
+        accountName= scanner.next();
+        System.out.println("podaj nazwisko");
+        accountSurname= scanner.next();
+        System.out.println("podaj stan konta");
+        balance= scanner.nextInt();
+    }
+    public void showAccount(){
+        System.out.println("Numer klienta: " + accountNumber + "Imię: " + accountName + "Nazwisko: " + accountSurname + "Podaj stan konta: " + balance);
+    }
 }
